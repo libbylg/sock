@@ -104,7 +104,15 @@ struct  sock_inst_t
 
 struct  sock_msg_t
 {
-
+    struct sock_node_t node;
+    int     cap;
+    int     len;
+    char    data[0];
 };
 
+
+SOCK_EXTERN sock_errno  sock_open(char* addr, struct sock_inst_t** pinst)
+{
+    struct sock_inst_t* inst = (struct sock_inst_t*)malloc(sizeof(struct sock_inst_t));
+}
 
